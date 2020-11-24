@@ -1,0 +1,26 @@
+{{> header}}
+        <div class="container">
+            <div class="row bg-light text-dark">
+            <h1>Movie title: {{item.title}}</h1>
+                
+                <div class="col-md-8">
+                    {{!-- <img class="img-thumbnail" src="https://upload.wikimedia.org/wikipedia/en/5/5a/It_%282017%29_poster.jpg" alt="Movie"> --}}
+                    <img class="img-thumbnail" src="{{item.imageURL}}" alt="Movie">
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3 class="my-3 ">Movie Description</h3>
+                    <p>{{item.description}}</p>
+            {{#if isCreator}}
+                    <a class="btn btn-danger" href="#/delete/{{item.id}}">Delete</a>
+                    <a class="btn btn-warning" href="#/edit/{{item.id}}">Edit</a>
+            {{else}}
+                {{#if isAlreadyCounted}}
+                    <span class="enrolled-span">Liked {{item.count}}</span>
+                {{else}}
+                    <a class="btn btn-primary" href="#/count/{{item.id}}">Like</a>
+                {{/if}}
+            {{/if}}
+                </div>
+            </div>
+        </div>
+{{> footer}}
