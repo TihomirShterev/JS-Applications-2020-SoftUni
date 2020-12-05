@@ -90,18 +90,20 @@ export function getCount(ctx) {
     .then((res) => {
       // console.log(res);
       const item = res.data();
-
-      const count = item.count + 1;
-
       const currentUser = sessionStorage.getItem("user");
       const usersWhoCounted = item.usersWhoCounted;
-      usersWhoCounted.push(currentUser);
 
-      update(id, { count, usersWhoCounted })
-        .then(() => {
-          ctx.redirect(`#/details/${id}`);
-        })
-        .catch((e) => console.log(e));
+      if (!usersWhoCounted.includes(currentUser)) {
+        // проверката е, за да не се инкрементира, когато се натисне back бутона 
+        const count = item.count + 1;
+        usersWhoCounted.push(currentUser);
+
+        update(id, { count, usersWhoCounted })
+          .then(() => {
+            ctx.redirect(`#/details/${id}`);
+          })
+          .catch((e) => console.log(e));
+      }
     })
     .catch((e) => console.log(e));
 }
