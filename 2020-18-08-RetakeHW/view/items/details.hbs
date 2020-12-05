@@ -2,8 +2,7 @@
         <div class="offer-details">
             <h1>{{item.name}}</h1>
             <div class="info">
-                <img src="{{item.imageURL}}"
-                    alt="">
+                <img src="{{item.imageURL}}" alt="">
                 <div class="description">{{item.description}}
                     <br>
                     <br>
@@ -11,8 +10,8 @@
                     <p class="price">${{item.price}}</p>
                 </div>
             </div>
-            {{#if isCreator}}
             <div class="actions">
+            {{#if isCreator}}
                 <a href="#/edit/{{item.id}}">Edit</a>
                 <a href="#/delete/{{item.id}}">Delete</a>
             {{else}}
@@ -21,7 +20,7 @@
                 {{else}}
                 <a href="#/count/{{item.id}}">Buy</a>
                 {{/if}}
-            </div>
             {{/if}}
+            </div>
         </div>
  {{> footer}}
