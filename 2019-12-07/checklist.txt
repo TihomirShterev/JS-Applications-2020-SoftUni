@@ -1,0 +1,51 @@
+[x] Създаване на npm пакет и инсталиране на библиотеки (само npm i ако ползвам скелета наготово)
+- [x] npm init -y
+- [x] npm install --save или npm i -E
+- [x] npm i -E jquery
+- [x] npm i -E sammy
+- [x] npm i -E handlebars
+- [x] npm i -E bootstrap
+- [x] зареждаме последователно jquery, bootstrap, handlebars, sammy и sammy.handlebars в head-a(или след body-то) на index.html
+- [x] зареждаме app.js в края на(или след) body-то(или в head-a) на index.html
+[] Създаване на приложение в Backendless или Firebase
+- [] Firebase 
+-- [x] GetStarted/AddProject/WriteName+Continue/Continue/DefaultAccountForFB/Click</>/WriteName+RegApp
+-- [x] копираме данните от config файла (var firebaseConfig и firebase.initializeApp(firebaseConfig) в config/firebase.js и firebase-app.js в index.html)
+-- [x] зареждаме config/firebase.js след библиотеките в index.html
+-- [] FB/ContinueToConsole
+--- [x] firebase-app.js ни свързва към app-a и ни позволява да използваме един обект-firebase, с който да правим заявките
+--- [x] firebase-auth.js ни позволява да ползваме готови ф-ии за login или register с email и password. Вземаме го от https://firebase.google.com/docs/web/setup#add-sdks-initialize -> From the CDN
+--- [x] firebase-firestore.js ни позволява да get-ваме инфо от самата колекция. Вземаме го от https://firebase.google.com/docs/web/setup#add-sdks-initialize -> From the CDN
+--- [x] зареждаме линковете, които ни свързват с Firebase в края на(или след) body-to след библиотеките в index.html
+--- [x] CloudFirestore/Create/TestMode+Next/eur3+Next
+--- [x] StartACollection/ID+Next/Auto-ID+Save
+--- [x] Authentication/SignInMethod/EmailPass+Edit/Enable+Save
+[*] Определяне на структурата на обектите(данните) и създаване на таблици в Backendless
+[*] Тестване на всички endpoints чрез Postman
+[*] Публикуване в github (препоръчителна допълнителна стъпка)
+[] Реализация на първа половина от задачата (последователност за всяка операция: .hbs -> user.js -> app.js)
+- [x] Извеждане на основни шаблони(страници) (от index.html във /view) (10mins)
+- [x] Допълване на {{> header}} и {{> footer}}, пътища (href-ове) (също и action-и, method-и, и name атрибути, където се налага) в шаблоните (.hbs-ите)
+-- [x] Във view/common/header.hbs и във view/home.hbs правим if-else проверка дали потребителят е логнат
+-- [x] Във view/common/header.hbs слагаме динамичен {{user}}
+- [] Реализация на модул за връзка с базата данни(Backendless или Firebase) - бизнес логика (/controller/partials.js,auth.js,home.js,user.js)
+-- [x] Регистрация/логин/логаут (controller/user.js)
+- [x] Рутиране към всички основни страници (app.js)
+[] Live Server Test (npx lite-server)
+[] Реализация на втора половина от задачата (oстаналите CRUD операции: .hbs -> items.js -> app.js)
+- [!] Home page с изобразяване на списъка със създадените динамични items
+-- [x] Във view/home.hbs слагане на динамични {{пропъртита}} вместо хардкоднатите и {{#each}}
+-- [x] В controller/home.js функционалност с getAll заявка
+- [???] Създаване
+-- [x] Проверка дали всичко е наред .hbs-a и допълване, където е нужно
+-- [x] Създаване на get и post функционалности(бизнес логика) в items.js
+-- [x] Експорт и импорт на функциите в app.js
+- [x] Редактиране
+- [] Изтриване
+- [*] Каталог
+- [*] Детайли
+- [*] Брояч
+- [*] Профил
+- [*] Търсене
+- [*] Сортиране
+- [*] Нотификации
