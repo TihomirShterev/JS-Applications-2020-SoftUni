@@ -31,6 +31,7 @@ const app = Sammy("body", function () {
 
   this.get("#/delete/:id", getDelete);
   this.get("#/delete/:id", postDelete);
+
   this.get("#/details/:id", getDetail);
   /*
   
