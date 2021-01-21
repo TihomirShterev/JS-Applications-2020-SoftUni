@@ -30,19 +30,19 @@ export function postRegister(ctx) {
   }
 
   registerUser(email, password) //
-    .then((res) => {
+    .then(res => {
       saveUserInfo(res.user.email);
       console.log(res);
       ctx.redirect("#/home");
     })
-    .catch((e) => console.log(e));
+    .catch(e => console.log(e));
 }
 
 export function postLogin(ctx) {
   const { email, password } = ctx.params;
 
   login(email, password) //
-    .then((res) => {
+    .then(res => {
       saveUserInfo(res.user.email);
 
       ctx.redirect("#/home");
@@ -50,7 +50,7 @@ export function postLogin(ctx) {
       // notify("Logged in!", "#successBox");
       // setTimeout(() => ctx.redirect("#/home"), 2000);
     })
-    .catch((e) => console.log(e));
+    .catch(e => console.log(e));
   // .catch((e) => notify(`${e.message}`, "#errorBox"));
 }
 
@@ -60,7 +60,7 @@ export function getLogout(ctx) {
       sessionStorage.clear();
       ctx.redirect("#/login");
     })
-    .catch((e) => console.log(e));
+    .catch(e => console.log(e));
 }
 
 /*
