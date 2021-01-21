@@ -28,19 +28,19 @@ export function postRegister(ctx) {
 
   // правим заявка за създаване и обработваме получения response-a
   registerUser(email, password) //
-    .then(res => {
+    .then((res) => {
       saveUserInfo(res.user.email);
       // console.log(res); // за да проверим какъв response сме получили, т.е. за да дебъгнем
       ctx.redirect("#/home");
     })
-    .catch(e => console.log(e)); // ако нещо не е наред в конзолата на браузъра ще ни се подскаже
+    .catch((e) => console.log(e)); // ако нещо не е наред в конзолата на браузъра ще ни се подскаже
 }
 
 export function postLogin(ctx) {
   const { email, password } = ctx.params;
 
   login(email, password) //
-    .then(res => {
+    .then((res) => {
       saveUserInfo(res.user.email);
 
       ctx.redirect("#/home");
@@ -48,7 +48,7 @@ export function postLogin(ctx) {
       // notify("Logged in!", "#successBox");
       // setTimeout(() => ctx.redirect("#/home"), 2000);
     })
-    .catch(e => console.log(e));
+    .catch((e) => console.log(e));
   // .catch((e) => notify(`${e.message}`, "#errorBox"));
 }
 
@@ -56,9 +56,9 @@ export function getLogout(ctx) {
   logout()
     .then(() => {
       sessionStorage.clear();
-      ctx.redirect("#/home");
+      ctx.redirect("#/login");
     })
-    .catch(e => console.log(e));
+    .catch((e) => console.log(e));
 }
 
 /*
