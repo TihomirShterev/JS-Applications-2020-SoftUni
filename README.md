@@ -1,6 +1,6 @@
 # JS-Applications-2020-SoftUni
 
-Exams solved by me. CSS provided by SoftUni.
+Exam SPAs solved by me. CSS provided by SoftUni.
 
 ### Tech Stack
 
@@ -10,5 +10,5 @@ Exams solved by me. CSS provided by SoftUni.
 
 ### Installation
 
-1) Run 'npm i'
-2) Run 'npx lite-server'
+1) Open an app folder and run 'npm i' in the terminal.
+2) Run 'npx lite-server' to start the app.
